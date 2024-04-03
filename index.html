@@ -14,51 +14,43 @@
                 <form action="reponse.php" method="post">
                     <table class="inner-table">
                         <tr>
-                            <td style="width: 40%; text-align: right;">Nom</td>
-                            <td style="width: 10%; text-align: center;">:</td>
-                            <td style="width: 50%;"><input type="text" name="nom"></td>
+                            <td><label for="nom">Nom :</label></td>
+                            <td><input type="text" name="nom" id="nom"></td>
                         </tr>
                         <tr>
-                            <td style="text-align: right;">Prénom</td>
-                            <td style="text-align: center;">:</td>
-                            <td><input type="text" name="prenom"></td>
+                            <td><label for="prenom">Prénom :</label></td>
+                            <td><input type="text" name="prenom" id="prenom"></td>
                         </tr>
                         <tr>
-                            <td style="text-align: right;">Date de naissance</td>
-                            <td style="text-align: center;">:</td>
-                            <td><input type="text" name="date_naissance"></td>
+                            <td><label for="date_naissance">Date de naissance :</label></td>
+                            <td><input type="text" name="date_naissance" id="date_naissance"></td>
                         </tr>
                         <tr>
-                            <td style="text-align: right;">N° de téléphone</td>
-                            <td style="text-align: center;">:</td>
-                            <td><input type="text" name="telephone"></td>
+                            <td><label for="telephone">N° de téléphone :</label></td>
+                            <td><input type="text" name="telephone" id="telephone"></td>
                         </tr>
                         <tr>
-                            <td style="text-align: right;">Adresse</td>
-                            <td style="text-align: center;">:</td>
-                            <td><textarea name="adresse" rows="3"></textarea></td>
+                            <td><label for="adresse">Adresse :</label></td>
+                            <td><textarea name="adresse" id="adresse" rows="3"></textarea></td>
                         </tr>
                         <tr>
-                            <td style="text-align: right;">Genre</td>
-                            <td style="text-align: center;">:</td>
+                            <td><label>Genre :</label></td>
                             <td>
-                                <input type="radio" name="genre" value="Masculin"> Masculin
-                                <input type="radio" name="genre" value="Féminin"> Féminin
+                                <input type="radio" name="genre" id="genre_masculin" value="Masculin"> <label for="genre_masculin">Masculin</label>
+                                <input type="radio" name="genre" id="genre_feminin" value="Féminin"> <label for="genre_feminin">Féminin</label>
                             </td>
                         </tr>
                         <tr>
-                            <td style="text-align: right;">Civilité</td>
-                            <td style="text-align: center;">:</td>
+                            <td><label>Civilité :</label></td>
                             <td>
-                                <input type="radio" name="civilite" value="Marié"> Marié
-                                <input type="radio" name="civilite" value="Célibataire" checked> Célibataire
+                                <input type="radio" name="civilite" id="civilite_marie" value="Marié"> <label for="civilite_marie">Marié</label>
+                                <input type="radio" name="civilite" id="civilite_celibataire" value="Célibataire" checked> <label for="civilite_celibataire">Célibataire</label>
                             </td>
                         </tr>
                         <tr>
-                            <td style="text-align: right;">Choix de formation</td>
-                            <td style="text-align: center;">:</td>
+                            <td><label for="formation">Choix de formation :</label></td>
                             <td>
-                                <select name="formation">
+                                <select name="formation" id="formation">
                                     <option value="">Choisir une formation</option>
                                     <option value="Informatique">Informatique</option>
                                     <option value="Médecine">Médecine</option>
@@ -68,23 +60,21 @@
                             </td>
                         </tr>
                         <tr>
-                            <td style="text-align: right;">Langues souhaitées</td>
-                            <td style="text-align: center;">:</td>
+                            <td><label>Langues souhaitées :</label></td>
                             <td>
-                                <input type="checkbox" name="langue[]" value="Français" checked> Français
-                                <input type="checkbox" name="langue[]" value="Anglais"> Anglais
-                                <input type="checkbox" name="langue[]" value="Arabe"> Arabe
-                                <input type="checkbox" name="langue[]" value="Aucune Préférence"> Aucune Préférence
+                                <input type="checkbox" name="langue[]" id="langue_francais" value="Français" checked> <label for="langue_francais">Français</label>
+                                <input type="checkbox" name="langue[]" id="langue_anglais" value="Anglais"> <label for="langue_anglais">Anglais</label>
+                                <input type="checkbox" name="langue[]" id="langue_arabe" value="Arabe"> <label for="langue_arabe">Arabe</label>
+                                <input type="checkbox" name="langue[]" id="langue_aucune" value="Aucune Préférence"> <label for="langue_aucune">Aucune Préférence</label>
                             </td>
                         </tr>
                         <tr>
-                            <td style="text-align: right;">Lettre de motivation</td>
-                            <td style="text-align: center;">:</td>
-                            <td><input type="file" name="motivation"></td>
+                            <td><label for="motivation">Lettre de motivation :</label></td>
+                            <td><textarea name="motivation" id="motivation" rows="5"></textarea></td>
                         </tr>
                         <tr>
-                            <td colspan="3" style="text-align: right;">
-                                <input type="submit" value="Sauvegarder"> &nbsp;
+                            <td colspan="2" style="text-align: right;">
+                                <input type="submit" value="Sauvegarder">
                                 <input type="reset" value="Annuler">
                             </td>
                         </tr>
