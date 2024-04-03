@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TP3 PWEB</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Fiche de vœux</h1>
+    <table class="outer-table">
+        <tr>
+            <td>
+                <form action="reponse.php" method="post">
+                    <table class="inner-table">
+                        <tr>
+                            <td style="width: 40%; text-align: right;">Nom</td>
+                            <td style="width: 10%; text-align: center;">:</td>
+                            <td style="width: 50%;"><input type="text" name="nom"></td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: right;">Prénom</td>
+                            <td style="text-align: center;">:</td>
+                            <td><input type="text" name="prenom"></td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: right;">Date de naissance</td>
+                            <td style="text-align: center;">:</td>
+                            <td><input type="text" name="date_naissance"></td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: right;">N° de téléphone</td>
+                            <td style="text-align: center;">:</td>
+                            <td><input type="text" name="telephone"></td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: right;">Adresse</td>
+                            <td style="text-align: center;">:</td>
+                            <td><textarea name="adresse" rows="3"></textarea></td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: right;">Genre</td>
+                            <td style="text-align: center;">:</td>
+                            <td>
+                                <input type="radio" name="genre" value="Masculin"> Masculin
+                                <input type="radio" name="genre" value="Féminin"> Féminin
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: right;">Civilité</td>
+                            <td style="text-align: center;">:</td>
+                            <td>
+                                <input type="radio" name="civilite" value="Marié"> Marié
+                                <input type="radio" name="civilite" value="Célibataire" checked> Célibataire
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: right;">Choix de formation</td>
+                            <td style="text-align: center;">:</td>
+                            <td>
+                                <select name="formation">
+                                    <option value="">Choisir une formation</option>
+                                    <option value="Informatique">Informatique</option>
+                                    <option value="Médecine">Médecine</option>
+                                    <option value="Sciences juridiques">Sciences juridiques</option>
+                                    <!-- Ajouter d'autres options au besoin -->
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: right;">Langues souhaitées</td>
+                            <td style="text-align: center;">:</td>
+                            <td>
+                                <input type="checkbox" name="langue[]" value="Français" checked> Français
+                                <input type="checkbox" name="langue[]" value="Anglais"> Anglais
+                                <input type="checkbox" name="langue[]" value="Arabe"> Arabe
+                                <input type="checkbox" name="langue[]" value="Aucune Préférence"> Aucune Préférence
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: right;">Lettre de motivation</td>
+                            <td style="text-align: center;">:</td>
+                            <td><input type="file" name="motivation"></td>
+                        </tr>
+                        <tr>
+                            <td colspan="3" style="text-align: right;">
+                                <input type="submit" value="Sauvegarder"> &nbsp;
+                                <input type="reset" value="Annuler">
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

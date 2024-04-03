@@ -1,0 +1,32 @@
+ /* Styles pour le titre */
+ h1 {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: orange;
+}
+
+/* Styles pour le cadre externe */
+.outer-table {
+    width: 800px;
+    border: 3px solid navy;
+    border-collapse: collapse; /* Fusionner les bordures */
+    margin: 0 auto; /* Centrage horizontal */
+}
+
+/* Styles pour le tableau interne */
+.inner-table {
+    width: 100%;
+    border-spacing: 5px; /* Espacement entre les cellules */
+}
+
+/* Styles pour les cellules */
+.inner-table td {
+    padding: 5px;
+}
+
+/* Styles pour les champs de saisie */
+input[type="text"],
+textarea {
+    width: 100%;
+}
