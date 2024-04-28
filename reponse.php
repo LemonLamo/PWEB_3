@@ -11,7 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $civilite = $_POST["civilite"];
     $formation = $_POST["formation"];
     $langues = isset($_POST["langue"]) ? implode(", ", $_POST["langue"]) : "Aucune";
-    $motivation = $_FILES["motivation"]["name"];
+    $motivation = $_POST["motivation"];
 
     // Afficher les données
     echo "<h2>Récapitulatif des informations :</h2>";

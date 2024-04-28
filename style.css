@@ -1,94 +1,195 @@
+/* Base styles for responsiveness */
+html, body {
+  box-sizing: border-box; /* Ensures consistent box model across devices */
+  margin: 0; /* Remove default browser margins */
+  padding: 0; /* Remove default browser padding */
+  font-size: 16px; /* Base font size for scalability */
+}
+
+/* Body styles */
 body {
-  
-    background-color: rgb(142, 138, 138);
-    color: darkblue;
-    font-family: Arial, sans-serif;
-    background-image:url(Images/annie-spratt-zA7I5BtFbvw-unsplash.jpg);
-    background-repeat: repeat;
-    background-position: center;
-    background-attachment: fixed;
-    background-size: cover;
-}  
- 
- 
- /* Styles pour le titre */
- h1 {
-    text-align: center;
-    font-size: 24px;
-    font-weight: bold;
-    color: rgb(214, 86, 0);
+  background-color: rgb(142, 138, 138);
+  color: darkblue;
+  font-family: Arial, sans-serif;
+  background-image: url(Images/annie-spratt-zA7I5BtFbvw-unsplash.jpg);
+  background-repeat: repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
 }
 
-/* Styles pour le cadre externe */
+/* Center content horizontally on all screens */
+.outer-table,
+form {
+  margin: 0 auto;
+  max-width: 800px; /* Set a maximum width for larger screens */
+  padding: 20px; /* Add some padding for better content spacing */
+}
+
+/* Responsive title */
+h1 {
+  text-align: center;
+  font-size: calc(1em + 1vw); /* Scale font size based on viewport width */
+  font-weight: bold;
+  color: rgb(214, 86, 0);
+  margin-bottom: 20px;
+}
+
+/* Responsive outer table */
 .outer-table {
-    width: 800px;
-    border: 3px solid navy;
-    border-collapse: collapse; /* Fusionner les bordures */
-    margin: 0 auto; /* Centrage horizontal */
+  border: 3px solid navy;
+  border-collapse: collapse;
 }
 
-/* Styles pour le tableau interne */
+/* Responsive inner table */
 .inner-table {
-    width: 100%;
-    border-spacing: 5px; /* Espacement entre les cellules */
+  width: 100%; /* Ensure inner table fills available space */
+  border-spacing: 5px; /* Consistent spacing between cells */
 }
 
-/* Styles pour les cellules */
+/* Responsive table cells */
 .inner-table td {
-    padding: 5px;
+  padding: 10px; /* More generous padding for better touch targets */
 }
 
-/* Styles pour les champs de saisie */
+/* Responsive input fields */
 input[type="text"],
 textarea {
-    width: 100%;
+  width: 75%; /* Adjust to 75% for label + input sharing */
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 2px solid rgba(93, 7, 71, 0.847);
+  border-radius: 4px;
+  background-color: #ffbfab9a;
+  color: rgb(68, 19, 124);
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1);
+  display: inline-block; /* Make inputs inline for side-by-side layout */
 }
 
+/* Responsive buttons */
+input[type="submit"],
+input[type="reset"] {
+  background-color: #4caf4fd7;
+  color: #fff;
+  padding: 10px 20px; /* Increase button width for better touch targets */
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: center; /* Center button text horizontally */
+  display: block; /* Make buttons full width on smaller screens */
+  margin-bottom: 10px;
+}
 
-input {
-    width: 50%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    box-sizing: border-box;
-    border: 2px solid rgba(93, 7, 71, 0.847);
-    border-radius: 4px;
-    background-color: #ffbfab9a;
-    color: rgb(68, 19, 124);
-    box-shadow:  10px 10px 20px rgba(0, 0, 0, 0.1);
-  }
+/* Hover effect for buttons (adjust as needed) */
+input[type="submit"]:hover,
+input[type="reset"]:hover {
+  background-color: #45a049;
+}
 
+/* Responsive labels with significant spacing */
+label {
+  color: rgb(66, 21, 64);
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  width: 100%; /* Adjust to 25% for label + input sharing (accounting for margins) */
+  /* Increased horizontal spacing between label and input (optional) */
+  margin-right: 3%; /* Adjust for additional spacing if needed */
+  display: inline-block; /* Make labels inline for side-by-side layout */
+}
 
-   
-  input[type="submit"],
-  input[type="reset"] {
-    background-color: #4caf4fd7;
-    color: #fff;
-    padding: 10px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-   
-    width: 50%;
-  }
+/* Responsive form layout */
+form {
+  text-align: left;
+}
+/* Styles for checkbox */
+input[type="checkbox"] {
+  appearance: none; /* Hide default browser checkbox style */
+  width: 20px; /* Set checkbox size */
+  height: 20px;
+  background-color: #ccc; /* Optional background color */
+  border: 2px solid #ccc; /* Square border (adjust color as needed) */
+  cursor: pointer; /* Indicate clickable behavior */
+}
 
-  input[type="submit"]:hover,
-  input[type="reset"]:hover {
-    background-color: #45a049;
-  }
+/* Styles for checkbox on hover */
+input[type="checkbox"]:hover {
+  background-color: #ddd; /* Optional hover effect */
+}
 
-  label {
-    color: rgb(66, 21, 64);
-    display: block;
-    font-weight: bold;
-    margin-bottom: 5px;
-    width: 50%;
-  }
+/* Styles for checkbox when checked */
+input[type="checkbox"]:checked {
+  background-color: #4CAF50; /* Green background on check */
+  border-color: #4CAF50; /* Adjust border color to match background */
+}
 
-  form {
-    margin-bottom: 20px;
-    text-align: left;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+/* Styles for checkmark (pseudo-element) */
+input[type="checkbox"]:checked::after {
+  content: '✔'; /* Use a checkmark symbol (optional) */
+  position: absolute;
+  display: block;
+  /* Ensure positioning within square checkbox */
+  left: 4px; /* Adjust for positioning */
+  top: 5px; /* Adjust for positioning */
+  width: 8px; /* Adjust width for thicker checkmark (optional) */
+  height: 5px; /* Adjust height for thicker checkmark (optional) */
+  /* Ensure no border hides the checkmark */
+  border: none;
+  /* Set white background color for the checkmark */
+  background-color: white; /* White checkmark */
+  transform: rotateZ(45deg); /* Rotate the checkmark slightly */
+}
+#formation {
+  /* Basic styles */
+  width: 200px; /* Adjust width as needed */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px; /* Add rounded corners */
+  font-family: Arial, sans-serif;
+  cursor: pointer; /* Indicate clickable behavior */
+}
 
-  }
+#formation:after {
+  /* Arrow indicator */
+  content: "";
+  position: absolute;
+  right: 10px; /* Adjust positioning */
+  top: 50%; /* Center vertically */
+  transform: translateY(-50%); /* Center vertically */
+  width: 0; 
+  height: 0; 
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 8px solid #ccc; /* Adjust color */
+}
+
+#formation:hover {
+  /* Hover effect */
+  border-color: #ddd; /* Adjust hover border color */
+}
+
+#formation:hover:after {
+  /* Hover effect for arrow */
+  border-bottom-color: #aaa; /* Adjust hover arrow color */
+}
+/* Styles for radio buttons */
+input[type="radio"] {
+  appearance: none; /* Hide default browser radio style */
+  width: 20px; /* Set radio button size */
+  height: 20px;
+  border-radius: 50%; /* Create round radio buttons */
+  background-color: #ccc; /* Optional background color */
+  cursor: pointer; /* Indicate clickable behavior */
+}
+
+/* Styles for radio buttons on hover */
+input[type="radio"]:hover {
+  background-color: #ddd; /* Optional hover effect */
+}
+
+/* Styles for radio buttons when checked */
+input[type="radio"]:checked {
+  background-color: #4CAF50; /* Green background on check */
+  border: 2px solid #4CAF50; /* Add green border on check */
+}
