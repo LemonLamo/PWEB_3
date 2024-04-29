@@ -33,20 +33,19 @@
                             <td><label for="adresse">Adresse :</label></td>
                             <td><textarea name="adresse" id="adresse" rows="3"></textarea></td>
                         </tr>
-                        <tr>
-                            <td><label>Genre :</label></td>
-                            <td>
-                                <input type="radio" name="genre" id="genre_masculin" value="Masculin"> <label for="genre_masculin">Masculin</label>
-                                <input type="radio" name="genre" id="genre_feminin" value="Féminin"> <label for="genre_feminin">Féminin</label>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><label>Civilité :</label></td>
-                            <td>
-                                <input type="radio" name="civilite" id="civilite_marie" value="Marié"> <label for="civilite_marie">Marié</label>
-                                <input type="radio" name="civilite" id="civilite_celibataire" value="Célibataire" checked> <label for="civilite_celibataire">Célibataire</label>
-                            </td>
-                        </tr>
+                     <!-- HTML Code -->
+<tr>
+    <td><label>Genre et Civilité :</label></td>
+    <td>
+        <div class="radio-wrapper">
+            <input type="radio" name="genre" class="genre" id="genre_masculin" value="Masculin"> <label for="genre_masculin">Masculin</label>
+            <input type="radio" name="genre" class="genre" id="genre_feminin" value="Féminin"> <label for="genre_feminin">Féminin</label>
+            <input type="radio" name="civilite" class="civilite" id="civilite_marie" value="Marié"> <label for="civilite_marie">Marié</label>
+            <input type="radio" name="civilite" class="civilite" id="civilite_celibataire" value="Célibataire" checked> <label for="civilite_celibataire">Célibataire</label>
+        </div>
+    </td>
+</tr>
+
                         <tr>
                             <td><label for="formation">Choix de formation :</label></td>
                             <td>
@@ -59,19 +58,22 @@
                                 </select>
                             </td>
                         </tr>
-                        <tr>
-                            <td><label>Langues souhaitées :</label></td>
-                            <td>
-                                <div class="checkbox-wrapper-19">
-                                    
-                                </div>
-                                
-                                <input  type="checkbox" name="langue[]" id="langue_francais" value="Français" checked> <label for="langue_francais">Français</label>
-                                <input  type="checkbox" name="langue[]" id="langue_anglais" value="Anglais"> <label for="langue_anglais">Anglais</label>
-                                <input type="checkbox" name="langue[]" id="langue_arabe" value="Arabe"> <label for="langue_arabe">Arabe</label>
-                                <input type="checkbox" name="langue[]" id="langue_aucune" value="Aucune Préférence"> <label for="langue_aucune">Aucune Préférence</label>
-                            </td>
-                        </tr>
+                       <!-- HTML Code -->
+           
+                       <!-- HTML Code -->
+<tr>
+    <td><label>Langues souhaitées :</label></td>
+    <td>
+        <div class="checkbox-wrapper">
+            <input type="checkbox" name="langue[]" class="langue" id="langue_francais" value="Français" checked> <label for="langue_francais">Français</label>
+            <input type="checkbox" name="langue[]" class="langue" id="langue_anglais" value="Anglais"> <label for="langue_anglais">Anglais</label>
+            <input type="checkbox" name="langue[]" class="langue" id="langue_arabe" value="Arabe"> <label for="langue_arabe">Arabe</label>
+            <input type="checkbox" name="langue[]" class="langue aucune" id="langue_aucune" value="Aucune Préférence"> <label for="langue_aucune">Aucune Préférence</label>
+        </div>
+    </td>
+</tr>
+
+
                         <tr>
                             <td><label for="motivation">Lettre de motivation :</label></td>
                             <td><textarea name="motivation" id="motivation" rows="5"></textarea></td>
@@ -87,5 +89,30 @@
             </td>
         </tr>
     </table>
+
+    <script>
+      
+document.addEventListener('DOMContentLoaded', function () {
+  var aucuneCheckbox = document.getElementById('langue_aucune');
+  var langueCheckboxes = document.querySelectorAll('.langue:not(.aucune)');
+
+  aucuneCheckbox.addEventListener('change', function () {
+    if (aucuneCheckbox.checked) {
+      langueCheckboxes.forEach(function (checkbox) {
+        checkbox.checked = false;
+      });
+    }
+  });
+
+  langueCheckboxes.forEach(function (checkbox) {
+    checkbox.addEventListener('change', function () {
+      if (checkbox.checked) {
+        aucuneCheckbox.checked = false;
+      }
+    });
+  });
+});
+
+    </script>
 </body>
 </html>

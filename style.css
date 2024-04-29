@@ -31,14 +31,15 @@ h1 {
   text-align: center;
   font-size: calc(1em + 1vw); /* Scale font size based on viewport width */
   font-weight: bold;
-  color: rgb(214, 86, 0);
+  color: rgb(153, 61, 0);
   margin-bottom: 20px;
 }
 
 /* Responsive outer table */
 .outer-table {
-  border: 3px solid navy;
+  border: 3px solid rgb(100, 14, 57);
   border-collapse: collapse;
+ 
 }
 
 /* Responsive inner table */
@@ -103,43 +104,40 @@ label {
 form {
   text-align: left;
 }
-/* Styles for checkbox */
-input[type="checkbox"] {
-  appearance: none; /* Hide default browser checkbox style */
-  width: 20px; /* Set checkbox size */
+
+
+/* CSS Code */
+.checkbox-wrapper {
+  display: flex;
+  gap: 10px;
+}
+
+/* Styles for round checkboxes */
+input[type="checkbox"].langue {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 70px;
   height: 20px;
-  background-color: #ccc; /* Optional background color */
-  border: 2px solid #ccc; /* Square border (adjust color as needed) */
-  cursor: pointer; /* Indicate clickable behavior */
+  border-radius: 10%; /* Make checkboxes round */
+  background-color: #ccc;
+  border: 2px solid #ccc;
+  cursor: pointer;
+  vertical-align: middle; /* Align with labels */
 }
 
-/* Styles for checkbox on hover */
-input[type="checkbox"]:hover {
-  background-color: #ddd; /* Optional hover effect */
+input[type="checkbox"].langue:hover {
+  background-color: #ddd;
 }
 
-/* Styles for checkbox when checked */
-input[type="checkbox"]:checked {
-  background-color: #4CAF50; /* Green background on check */
-  border-color: #4CAF50; /* Adjust border color to match background */
+input[type="checkbox"].langue:checked {
+  background-color: #4CAF50;
+  border-color: #4CAF50;
 }
 
-/* Styles for checkmark (pseudo-element) */
-input[type="checkbox"]:checked::after {
-  content: '✔'; /* Use a checkmark symbol (optional) */
-  position: absolute;
-  display: block;
-  /* Ensure positioning within square checkbox */
-  left: 4px; /* Adjust for positioning */
-  top: 5px; /* Adjust for positioning */
-  width: 8px; /* Adjust width for thicker checkmark (optional) */
-  height: 5px; /* Adjust height for thicker checkmark (optional) */
-  /* Ensure no border hides the checkmark */
-  border: none;
-  /* Set white background color for the checkmark */
-  background-color: white; /* White checkmark */
-  transform: rotateZ(45deg); /* Rotate the checkmark slightly */
-}
+
+
+
 #formation {
   /* Basic styles */
   width: 200px; /* Adjust width as needed */
@@ -173,23 +171,35 @@ input[type="checkbox"]:checked::after {
   /* Hover effect for arrow */
   border-bottom-color: #aaa; /* Adjust hover arrow color */
 }
-/* Styles for radio buttons */
-input[type="radio"] {
-  appearance: none; /* Hide default browser radio style */
-  width: 20px; /* Set radio button size */
+/* CSS Code */
+.radio-wrapper {
+  display: flex; /* Align radio buttons in a row */
+  gap: 10px; /* Optional: space between radio buttons */
+}
+
+/* Styles for round radio buttons */
+input[type="radio"].genre,
+input[type="radio"].civilite {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 70px;
   height: 20px;
-  border-radius: 50%; /* Create round radio buttons */
-  background-color: #ccc; /* Optional background color */
-  cursor: pointer; /* Indicate clickable behavior */
+  border-radius: 10%; /* Make radio buttons round */
+  background-color: #ccc;
+  border: 2px solid #ccc;
+  cursor: pointer;
+  vertical-align: middle; /* Align with labels */
 }
 
-/* Styles for radio buttons on hover */
-input[type="radio"]:hover {
-  background-color: #ddd; /* Optional hover effect */
+input[type="radio"].genre:hover,
+input[type="radio"].civilite:hover {
+  background-color: #ddd;
 }
 
-/* Styles for radio buttons when checked */
-input[type="radio"]:checked {
-  background-color: #4CAF50; /* Green background on check */
-  border: 2px solid #4CAF50; /* Add green border on check */
+input[type="radio"].genre:checked,
+input[type="radio"].civilite:checked {
+  background-color: #4CAF50;
+  border-color: #4CAF50;
 }
+
