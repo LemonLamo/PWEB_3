@@ -1,8 +1,9 @@
 <?php
 
-  function Afficher ($nom, $prenom, $date_naissance, $telephone, $adresse,$civilite,$genre,$formation,$langues,$motivation) {
-            // Afficher les données
-    echo "<h2>Récapitulatif des informations :</h2>";
+function Afficher ($nom, $prenom, $date_naissance, $telephone, $adresse, $civilite, $genre, $formation, $langues, $motivation) {
+    // Afficher les données
+    echo '<div class="centered" style="border: 3px solid rgb(194, 39, 137); padding: 10px; margin: 0 auto; width: 50%; border-radius: 5%; text-align: center;">';
+    echo '<h2>Récapitulatif des informations :</h2>';
     echo "<p><strong>Nom :</strong> $nom</p>";
     echo "<p><strong>Prénom :</strong> $prenom</p>";
     echo "<p><strong>Date de naissance :</strong> $date_naissance</p>";
@@ -13,8 +14,8 @@
     echo "<p><strong>Choix de formation :</strong> $formation</p>";
     echo "<p><strong>Langues souhaitées :</strong> $langues</p>";
     echo "<p><strong>Lettre de motivation :</strong> $motivation</p>";
-
-  }
+    echo '</div>';
+}
 
 
 // Vérifier si des données ont été soumises via la méthode POST
@@ -32,18 +33,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $motivation = $_POST["motivation"];
 
     
-
     if ($genre == 'Féminin') {
         if ($civilite == 'Marié') {
-           echo "<h1> Merci d'avoir rempli le formulaire Mme $prenom $nom! </h1>";
+           echo "<h1 style='text-align: center;'> Merci d'avoir rempli le formulaire Mme $prenom $nom! </h1>";
         } else {
-            echo "<h1> Merci d'avoir rempli le formulaire Mlle $prenom $nom! </h1>";
+            echo "<h1 style='text-align: center;'> Merci d'avoir rempli le formulaire Mlle $prenom $nom! </h1>";
         }
     } else {
-        echo "<h1> Merci d'avoir rempli le formulaire Mr $prenom $nom! </h1>";
+        echo "<h1 style='text-align: center;'> Merci d'avoir rempli le formulaire Mr $prenom $nom! </h1>";
     }
     
-
     // Afficher les données
     Afficher ($nom, $prenom, $date_naissance, $telephone, $adresse,$civilite,$genre,$formation,$langues,$motivation);
 } else {
@@ -51,3 +50,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     echo "Aucune donnée n'a été soumise.";
 }
 ?>
+
+
